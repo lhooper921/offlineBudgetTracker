@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lhooper921/offlineBudgetTracker"
+    "url": "git+https://github.com/lhooper921/offlineBudgetTracker"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lhooper921/offlineBudgetTracker"
+    "url": "https://github.com/lhooper921/offlineBudgetTracker/issues"
   },
-  "homepage": "https://github.com/lhooper921/offlineBudgetTracker",
+  "homepage": "https://github.com/lhooper921/offlineBudgetTracker#readme",
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
