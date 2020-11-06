@@ -16,9 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.get('/', function(req, res){
-  res.redirect('/index.html');
-});
+
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/budgetTracker',
