@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get('/', function(req, res){
-  res.redirect('./Develop/public/index.html');
+  res.redirect('/index.html');
 });
 
 mongoose.connect(
