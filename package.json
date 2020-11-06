@@ -1,5 +1,5 @@
 {
-  "name": "budget-app",
+  "name": "offlineBudgetTracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coding-boot-camp/unit18hw.git"
+    "url": "https://github.com/lhooper921/offlineBudgetTracker"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coding-boot-camp/unit18hw/issues"
+    "url": "https://github.com/lhooper921/offlineBudgetTracker"
   },
-  "homepage": "https://github.com/coding-boot-camp/unit18hw#readme",
+  "homepage": "https://github.com/lhooper921/offlineBudgetTracker",
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
