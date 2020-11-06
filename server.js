@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 
 
-
+PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(logger("dev"));
@@ -31,3 +31,4 @@ app.use(require("./Develop/routes/api"));
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+  
