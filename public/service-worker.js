@@ -9,7 +9,8 @@ const FILES_TO_CACHE = [
   "./icons/icon-512x512.png",
   "./manifest.webmanifest",
   "./favicon.ico",
-  "./db.js"
+  "./db.js",
+  "../routes/api.js"
  ]
   
   
