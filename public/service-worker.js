@@ -13,9 +13,14 @@ const FILES_TO_CACHE = [
  ]
   
   
-  // install
+  // install 
+  // Service Worker gives you an install event. You can use this to get stuff ready, stuff that must be ready before you handle other events. While this happens any previous version of your Service Worker is still running and serving pages, so the things you do here mustn't disrupt that.
+
   self.addEventListener("install", function (evt) {
+
     // pre cache transaction data
+
+    // event.waitUntil takes a promise to define the length and success of the install. If the promise rejects, the installation is considered a failure and this Service Worker will be abandoned (if an older version is running, it'll be left intact). caches.open() and cache.addAll() return promises. If any of the resources fail to be fetched, the cache.addAll() call rejects.
     evt.waitUntil(
        
       caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
@@ -28,9 +33,12 @@ const FILES_TO_CACHE = [
 
     // tell the browser to activate this service worker immediately once it
     // has finished installing
+
+   
     self.skipWaiting();
   });
 
+ // During activation, other events such as fetch are put into a queue, so a long activation could potentially block page loads. Keep your activation as lean as possible, and only use it for things you couldn't do while the old version was active.
   // activate
 self.addEventListener("activate", function(evt) {
   evt.waitUntil(
@@ -80,4 +88,7 @@ self.addEventListener("fetch", function(evt) {
       });
     })
   );
-});
+
+
+});  
+  
