@@ -1,15 +1,15 @@
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
-  "/",
+  "/", 
+  "./db.js",
   "./index.js",
   "./styles.css",
   "./index.html",
   "./icons/icon-192x192.png",
   "./icons/icon-512x512.png",
   "./manifest.webmanifest",
-  "./favicon.ico",
-  "./db.js"
+  "./favicon.ico"
  ]
   
   
@@ -38,8 +38,11 @@ const FILES_TO_CACHE = [
     self.skipWaiting();
   });
 
- // During activation, other events such as fetch are put into a queue, so a long activation could potentially block page loads. Keep your activation as lean as possible, and only use it for things you couldn't do while the old version was active.
-  // activate
+
+
+
+
+// activate
 self.addEventListener("activate", function(evt) {
   evt.waitUntil(
     caches.keys().then(keyList => {
@@ -56,7 +59,6 @@ self.addEventListener("activate", function(evt) {
 
   self.clients.claim();
 });
-
 // fetch
 self.addEventListener("fetch", function(evt) {
   if (evt.request.url.includes("/api/")) {
@@ -89,6 +91,7 @@ self.addEventListener("fetch", function(evt) {
     })
   );
 
+ 
 
 });  
   
